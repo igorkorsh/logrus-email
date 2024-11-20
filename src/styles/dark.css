@@ -1,0 +1,33 @@
+@media (prefers-color-scheme: dark) {
+	.dark-bg-gray-100 {
+		background-color: #0f151c !important;
+	}
+
+	.dark-bg-gray-200 {
+		background-color: #131a23 !important;
+	}
+
+	.dark-bg-gray-300 {
+		background-color: #21272f !important;
+	}
+
+	.dark-bg-gray-400 {
+		background-color: #383f48 !important;
+	}
+
+	.dark-bg-black {
+		background-color: #1d1d1b !important;
+	}
+
+	.dark-text-white {
+		color: #ffffff !important;
+	}
+
+	.dark-block {
+		display: block !important;
+	}
+
+	.dark-hidden {
+		display: none !important;
+	}
+}
