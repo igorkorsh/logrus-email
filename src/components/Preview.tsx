@@ -13,9 +13,12 @@ export const Preview = ({ text }: PreviewProps) => {
 
 	return (
 		<React.Fragment>
-			<div className='max-h-0 overflow-hidden' dangerouslySetInnerHTML={{ __html: text }}></div>
 			<div
-				className='hidden text-[1px] leading-[1px] max-h-0 max-w-0 opacity-0 overflow-hidden'
+				className='max-h-0 overflow-hidden mso-hide-all'
+				dangerouslySetInnerHTML={{ __html: text }}
+			></div>
+			<div
+				className='hidden text-[1px] leading-[1px] max-h-0 max-w-0 opacity-0 overflow-hidden mso-hide-all'
 				dangerouslySetInnerHTML={{ __html: renderHack() }}
 			></div>
 		</React.Fragment>

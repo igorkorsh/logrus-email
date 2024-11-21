@@ -1,9 +1,5 @@
 import * as React from 'react'
-import { LangContext } from './Provider'
-import { Table } from './Table'
-import { Link } from './Link'
-import { Image } from './Image'
-import { BaseProps, EmailComponent } from '../types'
+import { LangContext, Table, Link, Image } from './'
 import data from '../data/socials.json'
 
 export interface SocialItem {
@@ -11,17 +7,17 @@ export interface SocialItem {
 	label: string
 }
 
-export interface SocialProps extends BaseProps<'table'> {
+export interface SocialProps {
 	size: number
 	gap: number
 }
 
-export const Social: EmailComponent<SocialProps> = ({ size, gap, ...props }) => {
+export const Social = ({ size, gap }: SocialProps) => {
 	const lang = React.useContext(LangContext)
-	const icons: SocialItem[] = data[lang] || []
+	const icons: SocialItem[] = data[lang] || data['en']
 
 	return (
-		<Table {...props} width={icons.length * (size + gap) - gap}>
+		<Table width={icons.length * (size + gap) - gap} className='float-left'>
 			<tr>
 				{icons.map(({ url, label }, index) => (
 					<td key={index} className={`w-[${size + (index < icons.length - 1 ? gap : 0)}px]`}>

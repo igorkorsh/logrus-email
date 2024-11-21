@@ -2,7 +2,49 @@ import plugin from 'tailwindcss/plugin'
 import type { TailwindConfig } from '@react-email/tailwind'
 
 export default {
+	corePlugins: [
+		'backgroundColor',
+		'backgroundImage',
+		'backgroundPosition',
+		'backgroundRepeat',
+		'backgroundSize',
+		'borderCollapse',
+		'borderColor',
+		'borderRadius',
+		'borderStyle',
+		'borderWidth',
+		'boxShadow',
+		'boxShadowColor',
+		'clear',
+		'display',
+		'float',
+		'fontFamily',
+		'fontSize',
+		'fontStyle',
+		'fontWeight',
+		'height',
+		'letterSpacing',
+		'lineHeight',
+		'listStylePosition',
+		'listStyleType',
+		'margin',
+		'maxHeight',
+		'maxWidth',
+		'minHeight',
+		'minWidth',
+		'overflow',
+		'padding',
+		'tableLayout',
+		'textAlign',
+		'textColor',
+		'textDecoration',
+		'textIndent',
+		'textTransform',
+		'verticalAlign',
+		'width'
+	],
 	theme: {
+		screens: [],
 		colors: {
 			white: '#fff',
 			black: '#1d1d1b',
@@ -112,10 +154,13 @@ export default {
 		}
 	},
 	plugins: [
-		plugin(function ({ addComponents }) {
-			addComponents({
+		plugin(function ({ addUtilities }) {
+			addUtilities({
 				'.mso-line-height-exactly': {
 					msoLineHeightRule: 'exactly'
+				},
+				'.mso-hide-all': {
+					msoHide: 'all'
 				}
 			})
 		})

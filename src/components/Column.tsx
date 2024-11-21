@@ -12,12 +12,12 @@ export const Column: EmailComponent<ColumnProps> = ({ children, width, parentWid
 	<React.Fragment>
 		<Conditional
 			children={
-				!!parentWidth
+				parentWidth
 					? `<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="${parentWidth}"><tr><td valign="top" style="width: ${width}px">`
 					: `</td><td valign="top" style="width: ${width}px">`
 			}
 		/>
-		<div className={`inline-block w-full max-w-[${width}px] align-top stack-column`}>
+		<div className={`inline-block w-full max-w-[${width}px] align-top mobile-column`}>
 			<Section {...props}>{children}</Section>
 		</div>
 	</React.Fragment>

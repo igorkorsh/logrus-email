@@ -2,7 +2,7 @@
 	"en": [
 		{ "url": "https://facebook.com/Kaspersky", "label": "Facebook" },
 		{ "url": "https://twitter.com/kaspersky", "label": "Twitter" },
-		{ "url": "https://linkedin.com/company/kaspersky/", "label": "Linkedin" },
+		{ "url": "https://linkedin.com/company/kaspersky", "label": "Linkedin" },
 		{ "url": "https://youtube.com/Kaspersky", "label": "YouTube" },
 		{ "url": "https://instagram.com/kasperskylab", "label": "Instagram" }
 	],
@@ -16,7 +16,7 @@
 	"es": [
 		{ "url": "https://facebook.com/kasperskyes", "label": "Facebook" },
 		{ "url": "https://twitter.com/KasperskyES", "label": "Twitter" },
-		{ "url": "https://linkedin.com/company/kaspersky/", "label": "Linkedin" },
+		{ "url": "https://linkedin.com/company/kaspersky", "label": "Linkedin" },
 		{ "url": "https://www.youtube.com/Kasperskyespana", "label": "YouTube" },
 		{ "url": "https://instagram.com/Kasperskyes", "label": "Instagram" }
 	],
@@ -27,11 +27,25 @@
 		{ "url": "https://youtube.com/KasperskyFrance", "label": "YouTube" },
 		{ "url": "https://instagram.com/kasperskylabfrance", "label": "Instagram" }
 	],
+	"it": [
+		{ "url": "https://facebook.com/kasperskylabitalia", "label": "Facebook" },
+		{ "url": "https://twitter.com/KasperskyLabIT", "label": "Twitter" },
+		{ "url": "https://linkedin.com/company/kaspersky", "label": "Linkedin" },
+		{ "url": "https://youtube.com/Kaspersky", "label": "YouTube" },
+		{ "url": "https://instagram.com/kasperskylabitalia", "label": "Instagram" }
+	],
+	"ja": [
+		{ "url": "https://facebook.com/KasperskyLabsJapan", "label": "Facebook" },
+		{ "url": "https://twitter.com/kaspersky_japan", "label": "Twitter" },
+		{ "url": "https://www.linkedin.com/company/kaspersky-labs-japan", "label": "Linkedin" },
+		{ "url": "https://www.youtube.com/user/KasperskyJapan", "label": "YouTube" },
+		{ "url": "https://instagram.com/kaspersky_japan", "label": "Instagram" }
+	],
 	"ru": [
-		{ "url": "https://t.me/kasperskylab_ru", "icon": "", "label": "Telegram" },
-		{ "url": "https://vk.com/kaspersky", "icon": "", "label": "VK" },
-		{ "url": "https://dzen.ru/kaspersky_ru", "icon": "", "label": "Dzen" },
-		{ "url": "https://twitter.com/Kaspersky_ru", "icon": "", "label": "Twitter" },
-		{ "url": "https://youtube.com/@KasperskyRussia", "icon": "", "label": "YouTube" }
+		{ "url": "https://t.me/kasperskylab_ru", "label": "Telegram" },
+		{ "url": "https://vk.com/kaspersky", "label": "VK" },
+		{ "url": "https://dzen.ru/kaspersky_ru", "label": "Dzen" },
+		{ "url": "https://twitter.com/Kaspersky_ru", "label": "Twitter" },
+		{ "url": "https://youtube.com/@KasperskyRussia", "label": "YouTube" }
 	]
 }

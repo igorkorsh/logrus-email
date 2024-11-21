@@ -4,6 +4,7 @@ import {
 	Html,
 	Head,
 	Body,
+	Conditional,
 	Preview,
 	Table,
 	Text,
@@ -17,6 +18,7 @@ import {
 	Spacer,
 	Hero,
 	Webview,
+	Social,
 	Footer,
 	Footer_v2
 } from '../src/components'

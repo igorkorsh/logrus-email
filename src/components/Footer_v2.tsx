@@ -1,12 +1,6 @@
 import * as React from 'react'
-import { Section } from './Section'
-import { Row } from './Row'
-import { Column } from './Column'
-import { Spacer } from './Spacer'
-import { Text } from './Text'
-import { Link } from './Link'
-import { Image } from './Image'
-import { Social } from './Social'
+import { Section, Row, Column, Spacer, Text, Link, Image, Social } from './'
+import { Mindbox } from '../types'
 
 export const Footer_v2 = () => {
 	return (
@@ -40,9 +34,7 @@ export const Footer_v2 = () => {
 					<Text className='text-[10px] leading-[12px] text-gray-600'>
 						Kaspersky Lab UK Ltd., 1st Floor, 2 Kingdom Street, <br />
 						Paddington, W2 6BD, United Kingdom. <br />
-						<Link href='https://www.kaspersky.com' className='text-green-600'>
-							www.kaspersky.com
-						</Link>
+						<Link href='https://www.kaspersky.com'>www.kaspersky.com</Link>
 					</Text>
 					<Spacer size={12} />
 					<Text className='text-[10px] leading-[12px] text-gray-600'>
@@ -67,7 +59,7 @@ export const Footer_v2 = () => {
 					</Text>
 					<Text className='text-[10px] leading-[12px] text-gray-600'>
 						If you do not want to receive this email again, please{' '}
-						<Link href='${Message.UnsubscribeLink}'>click here</Link>.
+						<Link href={Mindbox.UNSUBSCRIBE}>click here</Link>.
 					</Text>
 					<Spacer size={12} />
 					<Text className='text-[10px] leading-[12px] text-gray-600'>
@@ -81,7 +73,7 @@ export const Footer_v2 = () => {
 						<br />
 						<Link>Please forward this email to a friend</Link>
 						{' | '}
-						<Link href='${Message.UnsubscribeLink}'>Unsubscribe</Link>
+						<Link href={Mindbox.UNSUBSCRIBE}>Unsubscribe</Link>
 					</Text>
 				</Column>
 			</Row>

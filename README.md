@@ -6,27 +6,27 @@
 - React версии 18.3.1
 
 ## Компоненты
-- [Body](Body)
-- [Button](Button)
-- [Column](Column)
-- [Conditional](Conditional)
-- [Container](Container)
-- [Footer](Footer)
-- [Footer_v2](Footer_v2)
-- [Head](Head)
-- [Hero](Hero)
-- [Html](Html)
-- [Image](Image)
-- [Link](Link)
-- [Preview](Preview)
-- [Provider](Provider)
-- [Row](Row)
-- [Section](Section)
-- [Social](Social)
-- [Spacer](Spacer)
-- [Table](Table)
-- [Text](Text)
-- [Webview](Webview)
+- [Body](#body)
+- [Button](#button)
+- [Column](#column)
+- [Conditional](#conditional)
+- [Container](#container)
+- [Footer](#footer)
+- [Footer_v2](#footer_v2)
+- [Head](#head)
+- [Hero](#hero)
+- [Html](#html)
+- [Image](#image)
+- [Link](#link)
+- [Preview](#preview)
+- [Provider](#provider)
+- [Row](#row)
+- [Section](#section)
+- [Social](#social)
+- [Spacer](#spacer)
+- [Table](#table)
+- [Text](#text)
+- [Webview](#webview)
 
 ### Body
 | Атрибут | Тип данных | Описание | Значение по умолчанию |
@@ -43,7 +43,7 @@
 | classNames | `Record<'wrapper' \| 'link', string \| undefined>` | Пользовательские имена классов (Tailwind) для элементов кнопки | – |
 
 ### Column
-Использовать только внутри компонента [Row](Row)
+Использовать только внутри компонента [Row](#row)
 | Атрибут | Тип данных | Описание | Значение по умолчанию |
 | ----------- | ----------- | ----------- | ----------- |
 | width | `number` | Ширина колонки | – |
@@ -56,7 +56,7 @@
 | target | `string` | Версия Outlook. Подробнее [https://stackoverflow.design/email/base/mso/](тут) | mso |
 
 ### Container
-Использовать только внутри компонента [Body](Body). Помимо пользовательских свойств компонент наследует все свойства доступные для тега `<td>`
+Использовать только внутри компонента [Body](#body). Помимо пользовательских свойств компонент наследует все свойства доступные для тега `<td>`
 | Атрибут | Тип данных | Описание | Значение по умолчанию |
 | ----------- | ----------- | ----------- | ----------- |
 | width | `number` | Ширина письма | 600 |
@@ -116,7 +116,7 @@
 | options | `{lang: string, colorScheme: string}` | Настройки письма | – |
 
 ### Row
-Компонент-контейнер для [Column](Column)
+Компонент-контейнер для [Column](#column)
 | Атрибут | Тип данных | Описание | Значение по умолчанию |
 | ----------- | ----------- | ----------- | ----------- |
 | className | `string` | Пользовательские имена классов | – |
