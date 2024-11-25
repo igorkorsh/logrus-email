@@ -2,37 +2,56 @@ import * as React from 'react'
 import { Section, Row, Column, Spacer, Text, Link, Image, Social } from './'
 import { Mindbox } from '../types'
 
-export const Footer = () => {
+export interface FooterProps {
+	variant?: 'light' | 'dark' | 'both'
+}
+
+export const Footer = ({ variant = 'light' }: FooterProps) => {
 	const links = [
 		{ url: '#', label: 'My Kaspersky' },
 		{ url: '#', label: 'FAQ' },
 		{ url: '#', label: 'Customer Service' }
 	]
 
+	const getLogo = () => {
+		switch (variant) {
+			case 'light':
+				return `/static/logo.png`
+			case 'dark':
+				return `/static/logo-dark.png`
+			case 'both':
+				return [`/static/logo.png`, `/static/logo-dark.png`]
+		}
+	}
+
 	return (
 		<React.Fragment>
-			<Section className='bg-[#e4e6e7] pt-[24px] pb-[32px] px-[32px] mobile-px-5 dark-bg-gray-300'>
+			<Section
+				className={`bg-${
+					variant !== 'dark' ? '[#e4e6e7]' : 'gray-300'
+				} pt-[24px] pb-[32px] px-[32px] mobile-px-5 dark-bg-gray-300`}
+			>
 				<Row>
 					<Column parentWidth={536} width={168}>
 						<Link href='https://www.kaspersky.com'>
-							<Image
-								src='/static/logo.png'
-								srcDark='/static/logo-dark.png'
-								width={168}
-								height={32}
-							/>
+							<Image srcset={getLogo()} width={168} height={32} />
 						</Link>
 					</Column>
 					<Column width={216} className='h-[16px]'></Column>
 					<Column width={152} className='py-[4px] float-left mobile-py-0'>
-						<Social size={24} gap={8} />
+						<Social variant={variant} size={24} gap={8} />
 					</Column>
 				</Row>
 				<Spacer size={16} />
 				<Text className='font-bold text-[16px] leading-[20px] text-gray-600 dark-text-white'>
 					{links.map(({ url, label }, index) => (
 						<React.Fragment key={index}>
-							<Link href={url} className='text-black no-underline dark-text-white'>
+							<Link
+								href={url}
+								className={`text-${
+									variant !== 'dark' ? 'black' : 'white'
+								} no-underline dark-text-white`}
+							>
 								{label}
 							</Link>
 							{index < links.length - 1 && ' | '}
@@ -65,7 +84,7 @@ export const Footer = () => {
 					</Column>
 				</Row>
 			</Section>
-			<Section className='bg-[#f8f8f8] px-[32px] py-[8px] mobile-px-5 dark-bg-gray-100'>
+			<Section className='px-[32px] py-[8px] mobile-px-5'>
 				<Text className='text-[10px] leading-[12px] text-[#999999] text-center'>
 					You are receiving this email at <Link className='font-bold'>name@name.com</Link> from{' '}
 					<Link className='font-bold'>example@kaspersky.com</Link> <br className='mobile-hidden' />
