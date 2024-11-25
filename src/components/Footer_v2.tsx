@@ -1,25 +1,44 @@
 import * as React from 'react'
-import { Section, Row, Column, Spacer, Text, Link, Image, Social } from './'
+import { Section, Row, Column, Spacer, Text, Link, Image, Social, FooterProps } from './'
 import { Mindbox } from '../types'
 
-export const Footer_v2 = () => {
+export const Footer_v2 = ({ variant = 'light' }: FooterProps) => {
+	const getLogo = () => {
+		switch (variant) {
+			case 'light':
+				return `/static/logo.png`
+			case 'dark':
+				return `/static/logo-dark.png`
+			case 'both':
+				return [`/static/logo.png`, `/static/logo-dark.png`]
+		}
+	}
+
 	return (
 		<React.Fragment>
-			<Section className='bg-white px-[32px] py-[30px] mobile-px-5 dark-bg-gray-200'>
+			<Section
+				className={`bg-${
+					variant !== 'dark' ? 'white' : 'gray-200'
+				} px-[32px] py-[30px] mobile-px-5 dark-bg-gray-200`}
+			>
 				<Row>
-					<Column parentWidth={536} width={140}>
-						<Text className='text-[14px] leading-[20px] text-black dark-text-white'>
+					<Column parentWidth={536} width={136}>
+						<Text
+							className={` text-${
+								variant !== 'dark' ? 'black' : 'white'
+							} text-[14px] leading-[20px] dark-text-white`}
+						>
 							Follow Kaspersky:
 						</Text>
 					</Column>
-					<Column width={396} className='float-left'>
+					<Column width={400} className='float-left'>
 						<Spacer size={16} className='hidden mobile-block' />
-						<Social size={20} gap={12}></Social>
+						<Social variant={variant} size={20} gap={12}></Social>
 					</Column>
 				</Row>
 				<Spacer size={20} />
 				<Link href='https://www.kaspersky.com'>
-					<Image src='/static/logo.png' srcDark='/static/logo-dark.png' width={137} height={26} />
+					<Image srcset={getLogo()} width={137} height={26} />
 				</Link>
 			</Section>
 			<Row className='px-[32px] py-[20px] mobile-px-5'>

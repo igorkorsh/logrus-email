@@ -11,6 +11,11 @@ export interface HeroProps {
 
 export const Hero = ({ href = '#', src, width, height }: HeroProps) => (
 	<Link href={href}>
-		<Image src={src} width={width} height={height} className={`w-full max-w-[${width}px] h-auto`} />
+		<Image
+			srcset={src}
+			width={width}
+			height={height}
+			className={`w-full max-w-[${width}px] h-auto`}
+		/>
 	</Link>
 )

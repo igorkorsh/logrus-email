@@ -1,39 +1,39 @@
 import * as React from 'react'
-import { ColorSchemeContext } from './Provider'
 import type { BaseProps, EmailComponent } from '../types'
 
 export interface ImageProps extends BaseProps<'img'> {
-	src: string
-	srcDark?: string
+	srcset: string | string[]
 	width: number
 	height: number
 }
 
-export const Image: EmailComponent<ImageProps> = ({ src, srcDark, width, height, ...props }) => {
-	const colorScheme = React.useContext(ColorSchemeContext)
-
-	return (
+export const Image: EmailComponent<ImageProps> = ({ srcset, width, height, ...props }) => {
+	return Array.isArray(srcset) ? (
 		<React.Fragment>
 			<img
 				{...props}
-				src={src}
+				src={srcset[0]}
 				width={width}
 				height={height}
-				className='align-top border-none dark-hidden'
+				className={`align-top border-none dark-hidden`}
 			/>
-			{colorScheme === 'light dark' && srcDark && (
-				<React.Fragment>
-					<span dangerouslySetInnerHTML={{ __html: '<!--[if !mso]><!-->' }}></span>
-					<img
-						{...props}
-						src={srcDark}
-						width={width}
-						height={height}
-						className='hidden border-none dark-block'
-					/>
-					<span dangerouslySetInnerHTML={{ __html: '<!--<![endif]-->' }}></span>
-				</React.Fragment>
-			)}
+			<span dangerouslySetInnerHTML={{ __html: '<!--[if !mso]><!-->' }}></span>
+			<img
+				{...props}
+				src={srcset[1]}
+				width={width}
+				height={height}
+				className='hidden border-none dark-block'
+			/>
+			<span dangerouslySetInnerHTML={{ __html: '<!--<![endif]-->' }}></span>
 		</React.Fragment>
+	) : (
+		<img
+			{...props}
+			src={srcset}
+			width={width}
+			height={height}
+			className={`align-top border-none`}
+		/>
 	)
 }
