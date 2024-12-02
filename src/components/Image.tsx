@@ -7,6 +7,7 @@ export interface ImageProps extends BaseProps<'img'> {
 	height: number
 }
 
+// TODO: Переписать
 export const Image: EmailComponent<ImageProps> = ({ srcset, width, height, ...props }) => {
 	return Array.isArray(srcset) ? (
 		<React.Fragment>

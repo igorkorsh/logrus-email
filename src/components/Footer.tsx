@@ -86,8 +86,8 @@ export const Footer = ({ variant = 'light' }: FooterProps) => {
 			</Section>
 			<Section className='px-[32px] py-[8px] mobile-px-5'>
 				<Text className='text-[10px] leading-[12px] text-[#999999] text-center'>
-					You are receiving this email at <Link className='font-bold'>name@name.com</Link> from{' '}
-					<Link className='font-bold'>example@kaspersky.com</Link> <br className='mobile-hidden' />
+					You are receiving this email at <Link>name@name.com</Link> from{' '}
+					<Link>example@kaspersky.com</Link> <br className='mobile-hidden' />
 					because you previously agreed to receive emails from Kaspersky.
 				</Text>
 			</Section>

@@ -7,7 +7,7 @@ export interface ButtonProps extends BaseProps<'a'> {
 	href?: string
 	width: number
 	keepWhite?: boolean
-	classNames?: Record<'wrapper' | 'link', string | undefined>
+	classNames?: Partial<Record<'wrapper' | 'link', string | undefined>>
 }
 
 export const Button: EmailComponent<ButtonProps> = ({

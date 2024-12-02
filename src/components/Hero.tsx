@@ -9,6 +9,7 @@ export interface HeroProps {
 	height: number
 }
 
+// TODO: Проверить работу после изменения Image
 export const Hero = ({ href = '#', src, width, height }: HeroProps) => (
 	<Link href={href}>
 		<Image
