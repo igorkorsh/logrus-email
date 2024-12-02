@@ -18,6 +18,7 @@
 - [Html](#html)
 - [Image](#image)
 - [Link](#link)
+- [List](#list)
 - [Preview](#preview)
 - [Provider](#provider)
 - [Row](#row)
@@ -101,6 +102,14 @@
 | href | `string` | Ссылка | – |
 | target | `React.HTMLAttributeAnchorTarget` | Место, где будет открыта ссылка. По умолчанию – в новом окне | _blank |
 | className | `string` | Пользовательские имена классов | – |
+
+### List
+Список
+| Атрибут | Тип данных | Описание | Значение по умолчанию |
+| ----------- | ----------- | ----------- | ----------- |
+| bullet | `React.ReactNode` | Элемент неупорядоченного списка | – |
+| items | string[] | – | – |
+| classNames | `Record<'bullet' \| 'text', string \| undefined>` | Пользовательские имена классов (Tailwind) для элементов списка | – |
 
 ### Preview
 Предпросмотровый текст письма. Также автоматически рассчитывает длину хака с пробелами.

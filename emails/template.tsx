@@ -9,6 +9,7 @@ import {
 	Table,
 	Text,
 	Link,
+	List,
 	Image,
 	Button,
 	Container,
@@ -18,11 +19,9 @@ import {
 	Spacer,
 	Hero,
 	Webview,
-	Webview_v2,
 	Social,
 	Footer,
-	Footer_v2,
-	Footer_v2_ru
+	Footer_v2
 } from '../src/components'
 
 export default function () {
@@ -36,7 +35,6 @@ export default function () {
 						<Webview />
 						<Footer variant='light' />
 						<Footer_v2 variant='light' />
-						<Footer_v2_ru variant='light' />
 					</Container>
 				</Body>
 			</Html>
