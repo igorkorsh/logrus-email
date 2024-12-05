@@ -13,7 +13,7 @@ export interface ListProps {
 export const List = ({ bullet, items, gap = 0, classNames }: ListProps) => {
 	const isLastItem = (index: number) => items.length > index + 1
 	const defaultStyles = {
-		bullet: 'w-[24px] align-top text-center',
+		bullet: 'w-6 align-top text-center',
 		text: ''
 	}
 

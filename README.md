@@ -40,8 +40,10 @@
 | ----------- | ----------- | ----------- | ----------- |
 | href | `string` | Ссылка | # |
 | width | `number` | Ширина кнопки (Outlook) | – |
+| align | `left \| center \| right` | Выравнивание кнопки | center |
 | keepWhite | `boolean` | Хак для кнопки в темной теме (Gmail) | true |
-| classNames | `Record<'wrapper' \| 'link', string \| undefined>` | Пользовательские имена классов (Tailwind) для элементов кнопки | – |
+| stretch | `boolean` | Растягивает ширину кнопки до 100% в мобильной версии | true |
+| classNames | `Record<'table' \| 'wrapper' \| 'link', string \| undefined>` | Пользовательские имена классов (Tailwind) для элементов кнопки | – |
 
 ### Column
 Использовать только внутри компонента [Row](#row)
@@ -81,6 +83,7 @@
 | src | `string` | Путь к изображению | – |
 | width | `number` | Ширина изображения | – |
 | height | `number` | Высота изображения | – |
+| className | `string` | Пользовательские классы | – |
 
 ### Html
 | Атрибут | Тип данных | Описание | Значение по умолчанию |

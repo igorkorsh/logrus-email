@@ -10,7 +10,7 @@ export const Webview = () => {
 	switch (lang) {
 		case 'ru':
 			return (
-				<Section className='px-[32px] py-[16px] font-arial text-[12px] leading-[16px] text-gray-600 text-right'>
+				<Section className='px-8 py-4 font-arial text-sm text-gray-600 text-right'>
 					<Link href={Mindbox.ACCESSIBILITY} className='text-gray-600'>
 						Веб-версия
 					</Link>
@@ -18,7 +18,7 @@ export const Webview = () => {
 			)
 		default:
 			return (
-				<Section className='px-[32px] py-[8px] font-arial text-[12px] leading-[16px] text-gray-600 text-center'>
+				<Section className='px-8 py-2 font-arial text-sm text-gray-600 text-center'>
 					<Link href={Mindbox.ACCESSIBILITY} className='text-gray-600'>
 						View email in your browser
 					</Link>

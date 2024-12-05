@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import * as React from 'react'
 import { Link } from './Link'
 import { Image } from './Image'
@@ -5,18 +6,18 @@ import { Image } from './Image'
 export interface HeroProps {
 	href?: string
 	src: string
-	width: number
+	width?: number
 	height: number
+	className?: string
 }
 
-// TODO: Проверить работу после изменения Image
-export const Hero = ({ href = '#', src, width, height }: HeroProps) => (
+export const Hero = ({ href = '#', src, width = 600, height, className }: HeroProps) => (
 	<Link href={href}>
 		<Image
 			srcset={src}
 			width={width}
 			height={height}
-			className={`w-full max-w-[${width}px] h-auto`}
+			className={clsx(`w-full max-w-[${width}px] h-auto`, className)}
 		/>
 	</Link>
 )

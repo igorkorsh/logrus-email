@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import * as React from 'react'
 import type { BaseProps, EmailComponent } from '../types'
 
@@ -7,8 +8,13 @@ export interface ImageProps extends BaseProps<'img'> {
 	height: number
 }
 
-// TODO: Переписать
-export const Image: EmailComponent<ImageProps> = ({ srcset, width, height, ...props }) => {
+export const Image: EmailComponent<ImageProps> = ({
+	srcset,
+	width,
+	height,
+	className,
+	...props
+}) => {
 	return Array.isArray(srcset) ? (
 		<React.Fragment>
 			<img
@@ -16,7 +22,7 @@ export const Image: EmailComponent<ImageProps> = ({ srcset, width, height, ...pr
 				src={srcset[0]}
 				width={width}
 				height={height}
-				className={`align-top border-none dark-hidden`}
+				className={clsx('align-top border-none dark-hidden', className)}
 			/>
 			<span dangerouslySetInnerHTML={{ __html: '<!--[if !mso]><!-->' }}></span>
 			<img
@@ -24,7 +30,7 @@ export const Image: EmailComponent<ImageProps> = ({ srcset, width, height, ...pr
 				src={srcset[1]}
 				width={width}
 				height={height}
-				className='hidden border-none dark-block'
+				className={clsx('hidden border-none dark-block', className)}
 			/>
 			<span dangerouslySetInnerHTML={{ __html: '<!--<![endif]-->' }}></span>
 		</React.Fragment>
@@ -34,7 +40,7 @@ export const Image: EmailComponent<ImageProps> = ({ srcset, width, height, ...pr
 			src={srcset}
 			width={width}
 			height={height}
-			className={`align-top border-none`}
+			className={clsx('align-top border-none', className)}
 		/>
 	)
 }

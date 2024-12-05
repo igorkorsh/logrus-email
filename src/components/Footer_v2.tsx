@@ -35,14 +35,14 @@ export const Footer_v2 = ({ variant = 'light' }: FooterProps) => {
 					<Section
 						className={`bg-${
 							variant !== 'dark' ? 'white' : 'gray-200'
-						} px-[32px] py-[30px] mobile-px-5 dark-bg-gray-200`}
+						} p-8 mobile-px-5 dark-bg-gray-200`}
 					>
 						<Row>
 							<Column parentWidth={536} width={180}>
 								<Text
 									className={` text-${
 										variant !== 'dark' ? 'black' : 'white'
-									} text-[14px] leading-[20px] dark-text-white`}
+									} text-base dark-text-white`}
 								>
 									Мы в социальных сетях:
 								</Text>
@@ -57,12 +57,12 @@ export const Footer_v2 = ({ variant = 'light' }: FooterProps) => {
 							<Image srcset={getLogo()} width={137} height={26} />
 						</Link>
 					</Section>
-					<Section className='px-[32px] py-[20px] mobile-px-5'>
-						<Text className='text-[10px] leading-[12px] text-gray-600 text-center'>
+					<Section className='px-8 py-5 mobile-px-5'>
+						<Text className='text-xs text-gray-600 text-center'>
 							&copy; АО «Лаборатория Касперского», {new Date().getFullYear()}.
 						</Text>
 						<Spacer size={12} />
-						<Text className='text-[10px] leading-[12px] text-gray-600 text-center'>
+						<Text className='text-xs text-gray-600 text-center'>
 							Если Вы хотите отказаться от получения писем, нажмите{' '}
 							<Link href={Mindbox.UNSUBSCRIBE}>здесь</Link>. Не отвечайте на это письмо, оно
 							рассылается автоматически. Чтобы ознакомиться с политикой конфиденциальности, нажмите{' '}
@@ -77,14 +77,14 @@ export const Footer_v2 = ({ variant = 'light' }: FooterProps) => {
 					<Section
 						className={`bg-${
 							variant !== 'dark' ? 'white' : 'gray-200'
-						} px-[32px] py-[30px] mobile-px-5 dark-bg-gray-200`}
+						} p-8 mobile-px-5 dark-bg-gray-200`}
 					>
 						<Row>
 							<Column parentWidth={536} width={136}>
 								<Text
 									className={` text-${
 										variant !== 'dark' ? 'black' : 'white'
-									} text-[14px] leading-[20px] dark-text-white`}
+									} text-base dark-text-white`}
 								>
 									Follow Kaspersky:
 								</Text>
