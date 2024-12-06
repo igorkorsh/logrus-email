@@ -4,10 +4,16 @@ import type { BaseProps, EmailComponent } from '../types'
 export interface ImageProps extends BaseProps<'img'> {
 	srcset: string | string[]
 	width: number
-	height: number
+	height: number	
 }
 
-export const Image: EmailComponent<ImageProps> = ({ srcset, width, height, ...props }) => {
+export const Image: EmailComponent<ImageProps> = ({
+	srcset,
+	width,
+	height,
+	className,
+	...props
+}) => {
 	return Array.isArray(srcset) ? (
 		<React.Fragment>
 			<img

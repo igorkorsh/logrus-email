@@ -25,6 +25,15 @@
 		padding-bottom: 0px !important;
 	}
 
+	.mobile-p-tb-16 {
+		padding-top: 16px !important;
+		padding-bottom: 16px !important;
+	}
+
+	.mobile-pt-0 {
+		padding-top: 0px !important;
+	}
+
 	.mobile-text-left {
 		text-align: left !important;
 	}
@@ -35,5 +44,33 @@
 
 	.mobile-hidden {
 		display: none !important;
+	}
+
+	.mobile-height-16 {
+		height: 16px !important;
+	}
+
+	.mobile-height-24 {
+		height: 24px !important;
+	}
+
+	.mobile-height-40 {
+		height: 40px !important;
+	}
+
+	.mobile-text-center {
+		text-align: center !important;
+	}
+
+	.mobile-table-175 {
+		width: 175px !important;
+	}
+
+	.mobile-p-left {
+		padding-left: 50px !important;
+	}
+
+	.mobile-height-auto {
+		height: auto !important;
 	}
 }

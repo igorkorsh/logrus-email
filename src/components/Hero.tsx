@@ -7,9 +7,10 @@ export interface HeroProps {
 	src: string
 	width: number
 	height: number
+	className?: string
 }
 
-export const Hero = ({ href = '#', src, width, height }: HeroProps) => (
+export const Hero = ({ href = '#', src, width, height, className }: HeroProps) => (
 	<Link href={href}>
 		<Image
 			srcset={src}
