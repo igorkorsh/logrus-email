@@ -8,7 +8,7 @@ export const Preview = ({ text }: PreviewProps) => {
 	const renderHack = () => {
 		const MAX_LENGTH = 80
 		const pattern = '&#847; &zwnj; &nbsp; &#8199; &shy; '
-		return pattern.repeat(MAX_LENGTH - text.length).trimEnd()
+		return pattern.repeat(Math.max(MAX_LENGTH - text.length, 0)).trimEnd()
 	}
 
 	return (

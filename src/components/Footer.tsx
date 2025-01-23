@@ -37,8 +37,8 @@ export const Footer = ({ variant = 'light' }: FooterProps) => {
 							<Image srcset={getLogo()} width={168} height={32} />
 						</Link>
 					</Column>
-					<Column width={216} className='h-4'></Column>
-					<Column width={152} className='py-1 float-left mobile-py-0'>
+					<Column width={64} className='h-4'></Column>
+					<Column width={304} className='py-1 float-right mobile-float-left mobile-py-0'>
 						<Social variant={variant} size={24} gap={8} />
 					</Column>
 				</Row>
