@@ -11,13 +11,13 @@ import {
 	Link,
 	List,
 	Image,
+	ImageDevice,
 	Button,
 	Container,
 	Section,
 	Row,
 	Column,
 	Spacer,
-	Hero,
 	Webview,
 	Social,
 	Footer,
@@ -29,7 +29,7 @@ export default function () {
 		<Provider options={{ lang: 'ru', colorScheme: 'light' }}>
 			<Html>
 				<Head title='' />
-				<Body color='#f4f7fa' darkClass='dark-bg-gray-100'>
+				<Body color='#f4f7fa'>
 					<Preview text='' />
 					<Container>
 						<Webview />

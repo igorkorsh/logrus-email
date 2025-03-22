@@ -1,14 +1,19 @@
-import clsx from 'clsx'
 import * as React from 'react'
 import type { BaseProps, EmailComponent } from '../types'
+import { cn } from '../utils/classnames'
 
-export interface TextProps extends BaseProps<'p'> {}
+interface TextProps extends BaseProps<'p'> {}
 
-export const Text: EmailComponent<TextProps> = ({ children, className, ...props }) => {
-	const defaultStyles = 'm-0 font-arial'
-
+export const Text: EmailComponent<TextProps> = ({
+	children,
+	className,
+	...props
+}) => {
 	return (
-		<p {...props} className={clsx(defaultStyles, className)}>
+		<p
+			{...props}
+			className={cn('font-arial m-0', className)}
+		>
 			{children}
 		</p>
 	)

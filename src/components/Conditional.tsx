@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export interface ConditionalProps {
+interface ConditionalProps {
 	children: React.ReactNode
 	target?: string
 }

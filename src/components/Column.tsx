@@ -2,14 +2,20 @@ import * as React from 'react'
 import { Conditional } from './Conditional'
 import { Section } from './Section'
 import type { BaseProps, EmailComponent } from '../types'
+import { cn } from '../utils/classnames'
 
-export interface ColumnProps extends BaseProps<'td'> {
+interface ColumnProps extends BaseProps<'td'> {
 	width: number
 	parentWidth?: number
 }
 
-export const Column: EmailComponent<ColumnProps> = ({ children, width, parentWidth, ...props }) => (
-	<React.Fragment>
+export const Column: EmailComponent<ColumnProps> = ({
+	children,
+	width,
+	parentWidth,
+	...props
+}) => (
+	<>
 		<Conditional
 			children={
 				parentWidth
@@ -17,8 +23,13 @@ export const Column: EmailComponent<ColumnProps> = ({ children, width, parentWid
 					: `</td><td valign="top" style="width: ${width}px">`
 			}
 		/>
-		<div className={`inline-block w-full max-w-[${width}px] align-top mobile-column`}>
+		<div
+			className={cn(
+				'mobile-column inline-block w-full align-top',
+				`max-w-[${width}px]`
+			)}
+		>
 			<Section {...props}>{children}</Section>
 		</div>
-	</React.Fragment>
+	</>
 )

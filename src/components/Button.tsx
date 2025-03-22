@@ -1,37 +1,46 @@
-import clsx from 'clsx'
 import * as React from 'react'
-import { Table } from './Table'
 import type { BaseProps, EmailComponent } from '../types'
+import { cn } from '../utils/classnames'
+import { Table } from './Table'
 
-export interface ButtonProps extends BaseProps<'a'> {
-	href?: string
+interface ButtonProps extends BaseProps<'a'> {
+	href: string
+	align: 'left' | 'center' | 'right'
 	width: number
-	align?: 'left' | 'center' | 'right'
-	keepWhite?: boolean
-	stretch?: boolean
-	classNames?: Partial<Record<'table' | 'wrapper' | 'link', string | undefined>>
+	keepWhite: boolean
+	classNames: Partial<Record<'base' | 'wrapper' | 'link', string>>
 }
 
-export const Button: EmailComponent<ButtonProps> = ({
+export const Button: EmailComponent<Partial<ButtonProps>> = ({
 	children,
 	href = '#',
-	width,
 	align = 'center',
+	width,
 	keepWhite = true,
-	stretch = true,
 	classNames
 }) => {
-	const defaultStyles = {
-		table: stretch ? 'mobile-w-full' : '',
-		wrapper: 'bg-green-600 rounded-[8px]',
-		link: 'block bg-green-600 rounded-[8px] border-solid border-[2px] border-green-600 font-arial text-md text-center text-white px-6 py-3 no-underline'
-	}
-
 	return (
-		<Table align={align} width={width} className={clsx(defaultStyles.table, classNames?.table)}>
+		<Table
+			align={align}
+			width={width}
+			className={cn('mobile-w-full', classNames?.base)}
+		>
 			<tr>
-				<td className={clsx(defaultStyles.wrapper, classNames?.wrapper)}>
-					<a href={href} target='_blank' className={clsx(defaultStyles.link, classNames?.link)}>
+				<td
+					align='center'
+					className={cn(
+						'h-[48px] rounded-[8px] bg-green-600',
+						classNames?.wrapper
+					)}
+				>
+					<a
+						href={href}
+						target='_blank'
+						className={cn(
+							'font-arial text-md block rounded-[8px] bg-green-600 px-6 py-3 text-center text-white no-underline',
+							classNames?.link
+						)}
+					>
 						{keepWhite ? (
 							<span className='gmail-screen'>
 								<span className='gmail-difference'>{children}</span>

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export interface PreviewProps {
+interface PreviewProps {
 	text: string
 }
 
@@ -14,11 +14,11 @@ export const Preview = ({ text }: PreviewProps) => {
 	return (
 		<React.Fragment>
 			<div
-				className='max-h-0 overflow-hidden mso-hide-all'
+				className='mso-hide-all max-h-0 overflow-hidden'
 				dangerouslySetInnerHTML={{ __html: text }}
 			></div>
 			<div
-				className='hidden text-[1px] leading-[1px] max-h-0 max-w-0 opacity-0 overflow-hidden mso-hide-all'
+				className='mso-hide-all hidden max-h-0 max-w-0 overflow-hidden text-[1px] leading-[1px] opacity-0'
 				dangerouslySetInnerHTML={{ __html: renderHack() }}
 			></div>
 		</React.Fragment>

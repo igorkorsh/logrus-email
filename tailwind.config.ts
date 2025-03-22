@@ -1,4 +1,3 @@
-import plugin from 'tailwindcss/plugin'
 import type { TailwindConfig } from '@react-email/tailwind'
 
 export default {
@@ -37,7 +36,6 @@ export default {
 		'tableLayout',
 		'textAlign',
 		'textColor',
-		'textDecoration',
 		'textIndent',
 		'textTransform',
 		'verticalAlign',
@@ -46,7 +44,7 @@ export default {
 	theme: {
 		screens: [],
 		colors: {
-			white: '#fff',
+			white: '#ffffff',
 			black: '#1d1d1b',
 			gray: {
 				100: '#0f151c',
@@ -163,31 +161,46 @@ export default {
 			'3xl': ['32px', '36px']
 		},
 		spacing: {
-			'0': '0px',
-			'1': '4px',
-			'2': '8px',
-			'3': '12px',
-			'4': '16px',
-			'5': '20px',
-			'6': '24px',
-			'7': '28px',
-			'8': '32px',
-			'9': '36px',
-			'10': '40px',
-			'11': '44px',
-			'12': '48px'
+			0: '0px',
+			1: '4px',
+			2: '8px',
+			3: '12px',
+			4: '16px',
+			5: '20px',
+			6: '24px',
+			7: '28px',
+			8: '32px',
+			9: '36px',
+			10: '40px',
+			11: '44px',
+			12: '48px',
+			13: '52px',
+			14: '56px',
+			15: '60px',
+			16: '64px'
 		}
 	},
 	plugins: [
-		plugin(function ({ addUtilities }) {
-			addUtilities({
+		function ({ addUtilities }) {
+			const newUtilities = {
 				'.mso-line-height-exactly': {
 					msoLineHeightRule: 'exactly'
 				},
 				'.mso-hide-all': {
 					msoHide: 'all'
+				},
+				'.underline': {
+					textDecoration: 'underline'
+				},
+				'.no-underline': {
+					textDecoration: 'none'
+				},
+				'.line-through': {
+					textDecoration: 'line-through'
 				}
-			})
-		})
+			}
+
+			addUtilities(newUtilities)
+		}
 	]
 } satisfies TailwindConfig

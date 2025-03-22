@@ -1,46 +1,50 @@
-import clsx from 'clsx'
 import * as React from 'react'
 import type { BaseProps, EmailComponent } from '../types'
+import { cn } from '../utils/classnames'
 
-export interface ImageProps extends BaseProps<'img'> {
-	srcset: string | string[]
-	width: number
-	height: number
+interface ImageProps extends BaseProps<'img'> {
+	src: string
+	darkSrc?: string
+	stretch?: boolean
+	classNames?: Partial<Record<'light' | 'dark', string>>
 }
 
 export const Image: EmailComponent<ImageProps> = ({
-	srcset,
+	src,
+	darkSrc,
 	width,
 	height,
-	className,
+	stretch = false,
+	classNames,
 	...props
 }) => {
-	return Array.isArray(srcset) ? (
-		<React.Fragment>
+	return (
+		<>
 			<img
 				{...props}
-				src={srcset[0]}
-				width={width}
-				height={height}
-				className={clsx('align-top border-none dark-hidden', className)}
+				src={src}
+				className={cn(
+					'border-none align-top',
+					`max-w-[${width}px]`,
+					stretch && 'h-auto w-full max-w-[600px]',
+					darkSrc && 'dark-hidden',
+					classNames?.light
+				)}
 			/>
-			<span dangerouslySetInnerHTML={{ __html: '<!--[if !mso]><!-->' }}></span>
-			<img
-				{...props}
-				src={srcset[1]}
-				width={width}
-				height={height}
-				className={clsx('hidden border-none dark-block', className)}
-			/>
-			<span dangerouslySetInnerHTML={{ __html: '<!--<![endif]-->' }}></span>
-		</React.Fragment>
-	) : (
-		<img
-			{...props}
-			src={srcset}
-			width={width}
-			height={height}
-			className={clsx('align-top border-none', className)}
-		/>
+			{darkSrc && (
+				<>
+					<span dangerouslySetInnerHTML={{ __html: '<!--[if !mso]><!-->' }} />
+					<img
+						{...props}
+						src={darkSrc}
+						className={cn(
+							'dark-block hidden h-auto w-full max-w-[600px] border-none',
+							classNames?.dark
+						)}
+					/>
+					<span dangerouslySetInnerHTML={{ __html: '<!--<![endif]-->' }} />
+				</>
+			)}
+		</>
 	)
 }

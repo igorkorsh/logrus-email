@@ -2,7 +2,7 @@ import * as React from 'react'
 
 export type ColorSchemeList = 'light' | 'dark' | 'light dark'
 
-export interface ProviderProps {
+interface ProviderProps {
 	children: React.ReactNode
 	options: {
 		lang: string
@@ -10,7 +10,7 @@ export interface ProviderProps {
 	}
 }
 
-export const ColorSchemeContext = React.createContext<ColorSchemeList>('light dark')
+export const ColorSchemeContext = React.createContext<ColorSchemeList>('light')
 export const LangContext = React.createContext<string>('en')
 
 export const Provider = ({ children, options }: ProviderProps) => (

@@ -1,43 +1,41 @@
-import clsx from 'clsx'
 import * as React from 'react'
 import { Table } from './Table'
+import { Spacer } from './Spacer'
 import { Text } from './Text'
+import { cn } from '../utils/classnames'
 
-export interface ListProps {
+interface ListProps {
+	items: React.ReactNode[]
 	bullet: React.ReactNode
-	items: string[]
 	gap?: number
-	classNames?: Partial<Record<'bullet' | 'text', string | undefined>>
+	classNames?: Partial<Record<'bullet' | 'text', string>>
 }
 
-export const List = ({ bullet, items, gap = 0, classNames }: ListProps) => {
-	const isLastItem = (index: number) => items.length > index + 1
-	const defaultStyles = {
-		bullet: 'w-6 align-top text-center',
-		text: ''
-	}
-
+export const List = ({ items, bullet, gap = 0, classNames }: ListProps) => {
 	return (
 		<Table>
 			{items.map((item, index) => (
-				<React.Fragment key={index}>
+				<tbody key={index}>
 					<tr>
-						<td className={clsx(defaultStyles.bullet, classNames?.bullet)}>{bullet}</td>
+						<td className={cn('w-6 text-center align-top', classNames?.bullet)}>
+							{bullet}
+						</td>
 						<td className='align-top'>
-							<Text
-								className={clsx(defaultStyles.text, classNames?.text)}
-								dangerouslySetInnerHTML={{ __html: item }}
-							></Text>
+							{typeof item === 'string' || typeof item === 'number' ? (
+								<Text className={classNames?.text}>{item}</Text>
+							) : (
+								item
+							)}
 						</td>
 					</tr>
-					{gap > 0 && isLastItem(index) && (
+					{gap > 0 && items.length > index + 1 && (
 						<tr>
-							<td colSpan={2} className={`h-[${gap}px] leading-[${gap}px]`}>
-								&nbsp;
+							<td colSpan={2}>
+								<Spacer size={gap} />
 							</td>
 						</tr>
 					)}
-				</React.Fragment>
+				</tbody>
 			))}
 		</Table>
 	)
