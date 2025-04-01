@@ -23,6 +23,8 @@ export const Image: EmailComponent<ImageProps> = ({
 			<img
 				{...props}
 				src={src}
+				width={width}
+				height={height}
 				className={cn(
 					'border-none align-top',
 					`max-w-[${width}px]`,
@@ -37,6 +39,8 @@ export const Image: EmailComponent<ImageProps> = ({
 					<img
 						{...props}
 						src={darkSrc}
+						width={width}
+						height={height}
 						className={cn(
 							'dark-block hidden h-auto w-full max-w-[600px] border-none',
 							classNames?.dark
