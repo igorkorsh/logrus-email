@@ -53,12 +53,7 @@ export const Footer = ({ variant = 'light' }: FooterProps) => {
 
 	return (
 		<>
-			<Section
-				className={cn(
-					'mobile-px-5 dark-bg-gray-300 px-8 pt-6 pb-8',
-					`bg-${variant !== 'dark' ? '[#e4e6e7]' : 'gray-300'} `
-				)}
-			>
+			<Section className={cn('mobile-px-5 dark-bg-gray-300 px-8 pt-6 pb-8', `bg-${variant !== 'dark' ? '[#e4e6e7]' : 'gray-300'} `)}>
 				<Row>
 					<Column
 						parentWidth={536}
@@ -89,10 +84,7 @@ export const Footer = ({ variant = 'light' }: FooterProps) => {
 						<React.Fragment key={index}>
 							<Link
 								href={url}
-								className={cn(
-									'dark-text-white no-underline',
-									`text-${variant !== 'dark' ? 'black' : 'white'}`
-								)}
+								className={cn('dark-text-white no-underline', `text-${variant !== 'dark' ? 'black' : 'white'}`)}
 							>
 								{label}
 							</Link>
@@ -119,22 +111,24 @@ export const Footer = ({ variant = 'light' }: FooterProps) => {
 						<Text className='mt-3 text-xs text-gray-600'>
 							&copy; {new Date().getFullYear()} AO Kaspersky Lab <br />
 							<b>
-								<Link href='https://www.kaspersky.com/web-privacy-policy'>
-									Privacy policy
-								</Link>
+								<Link href='https://www.kaspersky.com/web-privacy-policy'>Privacy policy</Link>
 							</b>
-							{' | '}
-							<b>
-								<Link href={Mindbox.UNSUBSCRIBE}>Unsubscribe</Link>
-							</b>
+							<span data-mindbox>
+								{' | '}
+								<b>
+									<Link href={Mindbox.UNSUBSCRIBE}>Unsubscribe</Link>
+								</b>
+							</span>
 						</Text>
 					</Column>
 				</Row>
 			</Section>
-			<Section className='mobile-px-5 px-8 py-2'>
+			<Section
+				data-mindbox
+				className='mobile-px-5 px-8 py-2'
+			>
 				<Text className='text-center text-xs text-[#999999]'>
-					You are receiving this email at <Link>name@name.com</Link> from{' '}
-					<Link>example@kaspersky.com</Link> <br className='mobile-hidden' />
+					You are receiving this email at <Link>name@name.com</Link> from <Link>example@kaspersky.com</Link> <br className='mobile-hidden' />
 					because you previously agreed to receive emails from Kaspersky.
 				</Text>
 			</Section>

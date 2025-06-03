@@ -86,7 +86,7 @@ export const Footer_v2 = ({ variant = 'light' }: FooterProps) => {
 							&copy; АО «Лаборатория Касперского», {new Date().getFullYear()}.
 						</Text>
 						<Spacer size={12} />
-						<Text className='text-center text-xs text-gray-600'>
+						<Text data-mindbox className='text-center text-xs text-gray-600'>
 							Если Вы хотите отказаться от получения писем, нажмите{' '}
 							<Link href={Mindbox.UNSUBSCRIBE}>здесь</Link>. Не отвечайте на это
 							письмо, оно рассылается автоматически. Чтобы ознакомиться с

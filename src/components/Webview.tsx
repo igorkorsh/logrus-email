@@ -16,6 +16,7 @@ export const Webview = ({ classNames }: WebviewProps) => {
 
 	return (
 		<Section
+			data-mindbox
 			className={cn('px-8', lang === 'ru' ? 'py-4' : 'py-2', classNames?.base)}
 		>
 			<Text

@@ -27,7 +27,6 @@ export const Image: EmailComponent<ImageProps> = ({
 				height={height}
 				className={cn(
 					"border-none align-top",
-					`max-w-[${width}px]`,
 					stretch && "h-auto w-full max-w-[600px]",
 					darkSrc && "dark-hidden",
 					classNames?.light,
@@ -43,7 +42,6 @@ export const Image: EmailComponent<ImageProps> = ({
 						height={height}
 						className={cn(
 							"dark-block hidden border-none",
-							`max-w-[${width}px]`,
 							stretch && "h-auto w-full max-w-[600px]",
 							classNames?.dark,
 						)}

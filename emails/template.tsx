@@ -21,12 +21,13 @@ import {
 	Webview,
 	Social,
 	Footer,
-	Footer_v2
+	Footer_v2,
+	Footer_v3
 } from '../src/components'
 
 export default function () {
 	return (
-		<Provider options={{ lang: 'ru', colorScheme: 'light' }}>
+		<Provider options={{ lang: 'en', colorScheme: 'light' }}>
 			<Html>
 				<Head title='' />
 				<Body color='#f4f7fa'>
@@ -35,6 +36,7 @@ export default function () {
 						<Webview />
 						<Footer variant='light' />
 						<Footer_v2 variant='light' />
+						<Footer_v3 variant='light' />
 					</Container>
 				</Body>
 			</Html>

@@ -3,7 +3,7 @@
 	"tabWidth": 2,
 	"overrides": [
 		{
-			"files": ["src/*", "emails/*"],
+			"files": ["src/**/*.tsx", "emails/*.tsx"],
 			"options": {
 				"arrowParens": "avoid",
 				"singleAttributePerLine": true,
@@ -18,7 +18,7 @@
 			}
 		},
 		{
-			"files": ["out/*", "src/data/*"],
+			"files": ["out/*.html", "src/data/*.json"],
 			"options": {
 				"printWidth": 999,
 				"htmlWhitespaceSensitivity": "ignore",

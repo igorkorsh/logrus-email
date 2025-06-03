@@ -40,7 +40,8 @@ export const ImageDevice: EmailComponent<ImageDeviceProps> = ({
 				width={mobile.width}
 				height={mobile.height}
 				className={cn(
-					'mobile-block hidden h-auto w-full max-w-[600px] border-none',
+					'mobile-block hidden h-auto w-full border-none',
+					`max-w-[${mobile.width}px]`,
 					classNames?.mobile
 				)}
 			/>
