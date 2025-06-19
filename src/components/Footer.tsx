@@ -12,9 +12,10 @@ import { cn } from '../utils/classnames'
 
 export interface FooterProps {
 	variant?: 'light' | 'dark' | 'light dark'
+	className?: string
 }
 
-export const Footer = ({ variant = 'light' }: FooterProps) => {
+export const Footer = ({ variant = 'light', className }: FooterProps) => {
 	const links = [
 		{ url: '#', label: 'My Kaspersky' },
 		{ url: '#', label: 'FAQ' },
@@ -53,7 +54,7 @@ export const Footer = ({ variant = 'light' }: FooterProps) => {
 
 	return (
 		<>
-			<Section className={cn('mobile-px-5 dark-bg-gray-300 px-8 pt-6 pb-8', `bg-${variant !== 'dark' ? '[#e4e6e7]' : 'gray-300'} `)}>
+			<Section className={cn('mobile-px-5 dark-bg-gray-300 px-8 pt-6 pb-8', `bg-${variant !== 'dark' ? '[#e4e6e7]' : 'gray-300'} `, className)}>
 				<Row>
 					<Column
 						parentWidth={536}

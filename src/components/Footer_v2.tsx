@@ -11,8 +11,9 @@ import { Image } from './Image'
 import { Mindbox } from '../types'
 import { FooterProps } from './Footer'
 import { Copyright } from './Copyright'
+import { cn } from '../utils/classnames'
 
-export const Footer_v2 = ({ variant = 'light' }: FooterProps) => {
+export const Footer_v2 = ({ variant = 'light', className }: FooterProps) => {
 	const lang = React.useContext(LangContext)
 
 	const renderLogo = () => {
@@ -49,19 +50,13 @@ export const Footer_v2 = ({ variant = 'light' }: FooterProps) => {
 		case 'ru':
 			return (
 				<React.Fragment>
-					<Section
-						className={`bg-${variant !== 'dark' ? 'white' : 'gray-200'} mobile-px-5 dark-bg-gray-200 p-8`}
-					>
+					<Section className={cn(`bg-${variant !== 'dark' ? 'white' : 'gray-200'} mobile-px-5 dark-bg-gray-200 p-8`, className)}>
 						<Row>
 							<Column
 								parentWidth={536}
 								width={180}
 							>
-								<Text
-									className={` text-${variant !== 'dark' ? 'black' : 'white'} dark-text-white text-base`}
-								>
-									Мы в социальных сетях:
-								</Text>
+								<Text className={` text-${variant !== 'dark' ? 'black' : 'white'} dark-text-white text-base`}>Мы в социальных сетях:</Text>
 							</Column>
 							<Column
 								width={356}
@@ -82,19 +77,14 @@ export const Footer_v2 = ({ variant = 'light' }: FooterProps) => {
 						<Link href='https://www.kaspersky.ru'>{renderLogo()}</Link>
 					</Section>
 					<Section className='mobile-px-5 px-8 py-5'>
-						<Text className='text-center text-xs text-gray-600'>
-							&copy; АО «Лаборатория Касперского», {new Date().getFullYear()}.
-						</Text>
+						<Text className='text-center text-xs text-gray-600'>&copy; АО «Лаборатория Касперского», {new Date().getFullYear()}.</Text>
 						<Spacer size={12} />
-						<Text data-mindbox className='text-center text-xs text-gray-600'>
-							Если Вы хотите отказаться от получения писем, нажмите{' '}
-							<Link href={Mindbox.UNSUBSCRIBE}>здесь</Link>. Не отвечайте на это
-							письмо, оно рассылается автоматически. Чтобы ознакомиться с
-							политикой конфиденциальности, нажмите{' '}
-							<Link href='https://www.kaspersky.ru/web-privacy-policy'>
-								здесь
-							</Link>
-							.
+						<Text
+							data-mindbox
+							className='text-center text-xs text-gray-600'
+						>
+							Если Вы хотите отказаться от получения писем, нажмите <Link href={Mindbox.UNSUBSCRIBE}>здесь</Link>. Не отвечайте на это письмо, оно рассылается автоматически. Чтобы ознакомиться с
+							политикой конфиденциальности, нажмите <Link href='https://www.kaspersky.ru/web-privacy-policy'>здесь</Link>.
 						</Text>
 					</Section>
 				</React.Fragment>
@@ -102,19 +92,13 @@ export const Footer_v2 = ({ variant = 'light' }: FooterProps) => {
 		default:
 			return (
 				<React.Fragment>
-					<Section
-						className={`bg-${variant !== 'dark' ? 'white' : 'gray-200'} mobile-px-5 dark-bg-gray-200 p-8`}
-					>
+					<Section className={`bg-${variant !== 'dark' ? 'white' : 'gray-200'} mobile-px-5 dark-bg-gray-200 p-8`}>
 						<Row>
 							<Column
 								parentWidth={536}
 								width={136}
 							>
-								<Text
-									className={` text-${variant !== 'dark' ? 'black' : 'white'} dark-text-white text-base`}
-								>
-									Follow Kaspersky:
-								</Text>
+								<Text className={` text-${variant !== 'dark' ? 'black' : 'white'} dark-text-white text-base`}>Follow Kaspersky:</Text>
 							</Column>
 							<Column width={400}>
 								<Spacer

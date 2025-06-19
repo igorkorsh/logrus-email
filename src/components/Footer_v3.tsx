@@ -8,7 +8,7 @@ import { Image } from './Image'
 import { cn } from '../utils/classnames'
 import { FooterProps } from './Footer'
 
-export const Footer_v3 = ({ variant = 'light' }: FooterProps) => {
+export const Footer_v3 = ({ variant = 'light', className }: FooterProps) => {
 	const renderLogo = () => {
 		switch (variant) {
 			case 'light':
@@ -41,7 +41,7 @@ export const Footer_v3 = ({ variant = 'light' }: FooterProps) => {
 
 	return (
 		<>
-			<Section className={cn('mobile-px-5 dark-bg-gray-300 px-8 pt-6 pb-8', `bg-${variant !== 'dark' ? 'white' : 'gray-300'} `)}>
+			<Section className={cn('mobile-px-5 dark-bg-gray-300 px-8 pt-6 pb-8', `bg-${variant !== 'dark' ? 'white' : 'gray-300'}`, className)}>
 				<Row>
 					<Column
 						parentWidth={536}
