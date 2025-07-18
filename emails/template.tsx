@@ -8,6 +8,7 @@ import {
 	Preview,
 	Table,
 	Text,
+	AnchorTarget,
 	Link,
 	List,
 	Image,
