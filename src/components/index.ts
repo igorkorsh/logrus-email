@@ -7,6 +7,7 @@ export * from "./Preview";
 export * from "./Table";
 export * from "./Text";
 export * from "./AnchorTarget";
+export * from "./LearnMore";
 export * from "./Link";
 export * from "./List";
 export * from "./Image";

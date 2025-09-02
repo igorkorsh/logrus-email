@@ -10,6 +10,7 @@ import {
 	Text,
 	AnchorTarget,
 	Link,
+	LearnMore,
 	List,
 	Image,
 	ImageDevice,
@@ -35,9 +36,12 @@ export default function () {
 					<Preview text='' />
 					<Container>
 						<Webview />
-						<Footer variant='light' />
-						<Footer_v2 variant='light' />
-						<Footer_v3 variant='light' />
+						<Section>
+							<LearnMore />
+						</Section>
+						<Footer variant='light dark' />
+						<Footer_v2 variant='light dark' />
+						<Footer_v3 variant='light dark' />
 					</Container>
 				</Body>
 			</Html>

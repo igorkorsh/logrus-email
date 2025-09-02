@@ -32,7 +32,7 @@ export const Social = ({
 			case 'light':
 				return (
 					<Image
-						src={`/static/${label.toLowerCase()}.png`}
+						src={`https://media.kaspersky.com/bcma/images/${label.toLowerCase()}.png`}
 						width={size}
 						height={size}
 					/>
@@ -40,7 +40,7 @@ export const Social = ({
 			case 'dark':
 				return (
 					<Image
-						src={`/static/${label.toLowerCase()}-dark.png`}
+						src={`https://media.kaspersky.com/bcma/images/${label.toLowerCase()}-dark.png`}
 						width={size}
 						height={size}
 					/>
@@ -48,8 +48,8 @@ export const Social = ({
 			case 'light dark':
 				return (
 					<Image
-						src={`/static/${label.toLowerCase()}.png`}
-						darkSrc={`/static/${label.toLowerCase()}-dark.png`}
+						src={`https://media.kaspersky.com/bcma/images/${label.toLowerCase()}.png`}
+						darkSrc={`https://media.kaspersky.com/bcma/images/${label.toLowerCase()}-dark.png`}
 						width={size}
 						height={size}
 					/>

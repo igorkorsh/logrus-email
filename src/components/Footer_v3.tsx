@@ -14,7 +14,7 @@ export const Footer_v3 = ({ variant = 'light', className }: FooterProps) => {
 			case 'light':
 				return (
 					<Image
-						src='/static/logo.png'
+						src='https://media.kaspersky.com/bcma/images/logo.png'
 						width={168}
 						height={32}
 					/>
@@ -22,7 +22,7 @@ export const Footer_v3 = ({ variant = 'light', className }: FooterProps) => {
 			case 'dark':
 				return (
 					<Image
-						src='/static/logo-dark.png'
+						src='https://media.kaspersky.com/bcma/images/logo-dark.png'
 						width={168}
 						height={32}
 					/>
@@ -30,8 +30,8 @@ export const Footer_v3 = ({ variant = 'light', className }: FooterProps) => {
 			case 'light dark':
 				return (
 					<Image
-						src='/static/logo.png'
-						darkSrc='/static/logo-dark.png'
+						src='https://media.kaspersky.com/bcma/images/logo.png'
+						darkSrc='https://media.kaspersky.com/bcma/images/logo-dark.png'
 						width={168}
 						height={32}
 					/>
